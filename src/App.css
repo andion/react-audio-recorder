@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+:root {
+  --base-size: 20px;
+  --icon-width: calc(var(--base-size) * 2);
+  --font-size: calc(var(--base-size) * 1.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  font-size: 16px;
   color: white;
 }
 
-.App-link {
+header {
+  flex: 1;
+}
+
+content {
+  flex: 2;
+}
+
+a {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.blink {
+  color: salmon;
+  animation: blinker 1.5s linear infinite;
+}
+
+.icon {
+  font-size: var(--icon-width);
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.1;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.audioRecorder {
+  width: 100%;
+  vertical-align: bottom;
+  display: flex;
+}
+
+.recordButtons {
+  width: calc(var(--icon-width) * 2);
+  text-align: center;
+}
+
+.recordTime {
+  font-size: var(--font-size);
+  align-self: center;
+  margin-left: var(--base-size);
+}
+
+.audio {
+  width: 100%;
+}
+
+.error {
+  font-family: monospace;
+  color: red;
 }
